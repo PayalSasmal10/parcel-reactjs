@@ -1,0 +1,26 @@
+{
+  "name": "namaste-igniting-app",
+  "version": "1.0.0",
+  "description": "This is a demo of igniting app in namaste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PayalSasmal10/parcel-reactjs.git"
+  },
+  "author": "Payal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PayalSasmal10/parcel-reactjs/issues"
+  },
+  "homepage": "https://github.com/PayalSasmal10/parcel-reactjs#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
