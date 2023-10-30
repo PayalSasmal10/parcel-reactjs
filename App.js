@@ -1,32 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const heading = React.createElement(
-    "h1",
-    {
-        id: "title",
-        key: "h1"
-    },
-    "Heading 1"
+
+// normal variable
+// const heading = (
+//     <h1> Namaste </h1>
+// )
+
+// component
+const Title = () => (
+    <h1> Namaste </h1>
 );
 
-const heading2 = React.createElement(
-    "h1",
-    {
-        id: "title",
-        key: "h2"
-    },
-    "Heading 2"
-);
-
-const container =  React.createElement(
-    "div",
-    {
-        id :"container",
-        hello: "world",
-    },
-    [heading, heading2]
-);
-
-console.log(heading);
+var xtr = 10;
+// name starts with capital letter- It is not mandatory.for good practice so, we use it
+const HeadingComponent = () => {
+    return (<div>
+        {/* {heading} - normal variable example */}
+        <Title/> {/* this is called component composion*/}
+        {/* {Title()}- we can write either component wise or nrmal func */}
+        {console.log("xtr")}
+        {1+2}
+        <h1>Func component</h1>
+        <h2>This is a h2 tag </h2>
+        </div>);    
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
+root.render(<HeadingComponent/>);
