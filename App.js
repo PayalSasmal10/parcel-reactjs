@@ -1,28 +1,55 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
+import swiggyLogo from "./assets/swiggy.svg";
 
-// normal variable
-// const heading = (
-//     <h1> Namaste </h1>
-// )
-
-// component
 const Title = () => (
-    <h1> Namaste </h1>
+    <img src={swiggyLogo}/>
 );
 
-var xtr = 10;
-// name starts with capital letter- It is not mandatory.for good practice so, we use it
-const HeadingComponent = () => {
-    return (<div>
-        {/* {heading} - normal variable example */}
-        <Title/> {/* this is called component composion*/}
-        {/* {Title()}- we can write either component wise or nrmal func */}
-        {console.log("xtr")}
-        {1+2}
-        <h1>Func component</h1>
-        <h2>This is a h2 tag </h2>
+const Header = () => {
+    return (<div className="header">
+        <Title/>
+        <div className="nav-items">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Cart</li>
+        </ul>
+        </div>
         </div>);    
 }
+
+const RestaurantCard = () => {
+    return(
+        <div className="card">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cvo1djhbwrgfqd64k0tl"/>
+            <h2>Meghna Food</h2>
+            <h2>Biriyani,Andhra</h2>
+        </div>
+    );
+};
+
+const Body = ()=> {
+    return(<div className="restaurant-list">
+        <RestaurantCard/>      
+    </div>)
+};
+
+const Footer = ()=> {
+    <h2>Footer</h2>
+};
+
+const AppLayout = () => {
+    return (
+        <>
+        <Header/>
+        <Body/>
+        <Footer/>
+        </>
+    );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
