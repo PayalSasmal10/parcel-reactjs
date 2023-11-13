@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 
 const AppLayout = () => {
+    console.log("I am from app");
     return (
         <>
         <Header/>

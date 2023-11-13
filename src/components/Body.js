@@ -2,9 +2,23 @@ import { useState } from "react";
 import {restaurantList} from "../contants";
 import RestaurantCard  from "./RestaurantCard";
 
+console.log("searchText");
+
 const Body = ()=> {
+  const [restaurants, setRestaurants] = useState(restaurantList);
   const [searchText, setSearchText] = useState("");
-  const [searchClicked, setSearchClicked] = useState("false");
+ 
+  console.log("searchText");
+
+  const filteredData = () => {
+    console.log("restaurantList");
+    const restaurantData = [...restaurants];
+    const data = restaurantData.filter((item) => item.info.name.toLowerCase().includes(searchText.toLowerCase()));
+    console.log("data", data);
+    setRestaurants([...restaurants, data]);
+  }
+  console.log("restaurantList",restaurants);
+
     return(
     <>
     <div className="search-container">
@@ -14,18 +28,10 @@ const Body = ()=> {
         className="search-text"
         onChange={(e) => setSearchText(e.target.value)}
         />
-        <h1>{searchClicked}</h1>
-      <button className="search-btn" onClick={() =>{
-        if(searchClicked === "true"){
-          setSearchClicked("false");
-        }else{
-          setSearchClicked("true");
-        }
-
-      }}>Search</button>
+      <button className="search-btn" onClick={filteredData}>Search</button>
     </div>
     <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
+      {restaurants.map((restaurant) => {
         return(
           <RestaurantCard {...restaurant.info} key={restaurant.info.id}/>      
         )

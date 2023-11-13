@@ -1,4 +1,5 @@
 import swiggyLogo from "../../assets/swiggy.svg";
+
 export const Title = () => (
     <img src={swiggyLogo}/>
 );
