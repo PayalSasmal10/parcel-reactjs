@@ -12,10 +12,14 @@ const Body = ()=> {
 
   const filteredData = () => {
     console.log("restaurantList");
-    const restaurantData = [...restaurants];
-    const data = restaurantData.filter((item) => item.info.name.toLowerCase().includes(searchText.toLowerCase()));
-    console.log("data", data);
-    setRestaurants([...restaurants, data]);
+    if(searchText){
+
+      const restaurantData = [...restaurants];
+      const data = restaurantData.filter((item) => item.info.name.toLowerCase().includes(searchText.toLowerCase()));
+      console.log("data", data);
+      setRestaurants(data);
+    }
+    setRestaurants(restaurantList);
   }
   console.log("restaurantList",restaurants);
 
